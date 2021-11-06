@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469945689392397121}
   - component: {fileID: 4469945689392397120}
+  - component: {fileID: 2025801076511652382}
   m_Layer: 0
   m_Name: EnemySkullRocket
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4469945689392397126}
   m_LocalRotation: {x: 0, y: -0.5, z: 0, w: 0.8660254}
   m_LocalPosition: {x: -2.92, y: 1.83, z: 0}
-  m_LocalScale: {x: 0.06921837, y: 0.06921837, z: 0.06921837}
+  m_LocalScale: {x: 0.106700115, y: 0.106700115, z: 0.106700115}
   m_Children:
   - {fileID: 8895413167384948624}
   - {fileID: 1148195420528806149}
@@ -45,6 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0173d4a2b5a0514e9130c87aa0e7301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &2025801076511652382
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469945689392397126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 100
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4469945688624069056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,19 +211,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalScale.x
-      value: 8.723295
+      value: 12.946816
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalScale.y
-      value: 13.376
+      value: 19.852201
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.166453
+      value: 12.120371
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -217,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalRotation.w
