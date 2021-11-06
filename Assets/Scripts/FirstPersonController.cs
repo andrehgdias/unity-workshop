@@ -5,10 +5,13 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
     public bool CanMove { get; private set; } = true;
+    public bool IsSprinting => CanMove && Input.GetKey(KeyCode.LeftShift);
 
     [Header("Movement Parameters")]
-    [SerializeField] private float walkSpeed = 3f;
-    [SerializeField] private float gravity = 10f;
+    [SerializeField] private float walkSpeed = 4f;
+    [SerializeField] private float sprintSpeed = 8f;
+    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float gravity = 13f;
 
     [Header("Camera Parameters")]
     [SerializeField, Range(1, 10)] private float mouseSensitivityX = 2f;
@@ -53,13 +56,20 @@ public class FirstPersonController : MonoBehaviour
         rotationAroundX -= Input.GetAxis("Mouse Y") * mouseSensitivityY;
         rotationAroundX = Mathf.Clamp(rotationAroundX, -upperLookLimit, lowerLookLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationAroundX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * mouseSensitivityX, 0);
+        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX);
     }
 
     private void ApplyFinalMovements()
     {
         if (!characterController.isGrounded)
             moveDirection.y -= gravity * Time.deltaTime;
-        characterController.Move(moveDirection * walkSpeed * Time.deltaTime);
+        else if(Input.GetButtonDown("Jump"))
+        {
+            moveDirection.y = jumpForce;
+        }
+        else
+            moveDirection.y = -2f;
+            
+        characterController.Move(moveDirection * (IsSprinting ? sprintSpeed : walkSpeed) * Time.deltaTime);
     }
 }
