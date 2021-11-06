@@ -21,4 +21,9 @@ public class EnemyController : MonoBehaviour
         Vector3 step = target.transform.position - transform.position;
         transform.position += step * velocity;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            Destroy(collision.gameObject);
+    }
 }
