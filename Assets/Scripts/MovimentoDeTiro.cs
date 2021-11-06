@@ -23,18 +23,16 @@ public class MovimentoDeTiro : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        EnemyController thisEnemyController = collision.gameObject.GetComponent<EnemyController>();
-
-        if(thisEnemyController == null)
-        {
-            return;
-        }
-
-        thisEnemyController.vida--;
-
-        if(thisEnemyController.vida < 0)
+        Debug.Log(collision.gameObject.tag);
+        if (this.gameObject.name == "RocketEmpty" && collision.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }    
+        if (this.gameObject.name == "TeletransporteBullet" && collision.gameObject.tag == "Parede")
+        {
+            // o player faz o tp pra esse local
         }
+        
     }
 }
