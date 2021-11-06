@@ -376,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245659078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424653005}
@@ -432,8 +432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   gravity: 10
-  lookSpeedX: 2
-  lookSpeedY: 2
+  mouseSensitivityX: 2
+  mouseSensitivityY: 2
   upperLookLimit: 80
   lowerLookLimit: 80
 --- !u!4 &424653005
