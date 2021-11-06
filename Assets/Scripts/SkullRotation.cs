@@ -15,7 +15,6 @@ public class SkullRotation : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            
            SmoothLookAt(other.gameObject.transform.position - transform.position);
         }
     }
