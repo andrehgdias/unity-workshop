@@ -30,6 +30,7 @@ public class EnemyGunController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             
