@@ -8,6 +8,7 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Movement Parameters")]
     [SerializeField] private float walkSpeed = 3f;
+    [SerializeField] private float gravity = 10f;
 
     [Header("Camera Parameters")]
     [SerializeField, Range(1, 10)] private float lookSpeedX = 2f;
@@ -57,6 +58,8 @@ public class FirstPersonController : MonoBehaviour
 
     private void ApplyFinalMovements()
     {
+        if (!characterController.isGrounded)
+            moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
     }
 }
