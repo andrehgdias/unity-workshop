@@ -23,14 +23,16 @@ public class MovimentoDeTiro : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(gameObject.name);
         Debug.Log(collision.gameObject.tag);
-        if (this.gameObject.name == "RocketEmpty" && collision.gameObject.tag == "Player")
+        if (gameObject.name == "RocketEmpty(Clone)" && collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }    
-        if (this.gameObject.name == "TeletransporteBullet" && collision.gameObject.tag == "Parede")
+        if (gameObject.name == "TeletransporteBullet(Clone)" && collision.gameObject.tag == "Parede")
         {
+            
             // o player faz o tp pra esse local
         }
         

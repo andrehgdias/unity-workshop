@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3595942115235658680}
   - component: {fileID: 5643637471293633203}
-  - component: {fileID: 4805482163267502565}
   m_Layer: 0
   m_Name: Teletransporte
   m_TagString: Untagged
@@ -30,8 +29,8 @@ Transform:
   m_LocalScale: {x: 0.6521602, y: 1, z: 0.6105303}
   m_Children:
   - {fileID: 7166415843156462740}
-  - {fileID: 4303564252820183523}
   - {fileID: 6445492113493671547}
+  - {fileID: 4303564252820183523}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -54,21 +53,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4805482163267502565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853869346055868449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3a80d539ce789438ea35bce2e29355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabDoTiro: {fileID: 6878697837347702482, guid: 0387f05982518ac40b1d843bda73abf3, type: 3}
-  myAnimator: {fileID: 5643637471293633203}
-  fireRate: 1
 --- !u!1 &2193962547268382957
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +84,7 @@ Transform:
   m_LocalScale: {x: 0.46888325, y: 0.2862675, z: 0.4389526}
   m_Children: []
   m_Father: {fileID: 3595942115235658680}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8758776995488767105
 MeshFilter:
@@ -190,11 +174,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303564252820183520}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.307, y: 0.064, z: -0}
+  m_LocalPosition: {x: -1.307, y: 0.064, z: 0}
   m_LocalScale: {x: 4.2903, y: 4.2903, z: 4.518973}
   m_Children: []
   m_Father: {fileID: 3595942115235658680}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &4303564252820183522
 MonoBehaviour:
