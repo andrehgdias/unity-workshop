@@ -11,7 +11,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float sprintSpeed = 8f;
     [SerializeField] private float jumpForce = 8f;
-    [SerializeField] private float gravity = 15f;
+    [SerializeField] private float gravity = 20f;
 
     [Header("Headbob Parameters")]
     [SerializeField] private float walkBobSpeed = 10f;
@@ -29,7 +29,7 @@ public class FirstPersonController : MonoBehaviour
 
     private Camera playerCamera;
     private CharacterController characterController;
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     private Vector2 currentInput;
     private float rotationAroundX = 0;
     private float defaultXPosition;
@@ -93,9 +93,10 @@ public class FirstPersonController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         else if(Input.GetButtonDown("Jump"))
             moveDirection.y = jumpForce;
-        else
-            moveDirection.y = -1f;
-            
+
+        if (characterController.velocity.y < -gravity)
+            moveDirection.y = -gravity;
+
         characterController.Move(moveDirection * Time.deltaTime);
         HandleHeadBob();
     }

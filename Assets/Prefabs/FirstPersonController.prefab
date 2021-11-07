@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7837401911083208800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 7837401911351203931}
   m_RootOrder: 0
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7837401911214316880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalPosition: {x: 0, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7837401911351203931}
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7837401911351203931}
   - component: {fileID: 7837401911351203933}
   - component: {fileID: 7837401911351203930}
+  - component: {fileID: 1584303271}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -209,7 +210,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -242,3 +243,17 @@ MonoBehaviour:
   mouseSensitivityY: 2
   upperLookLimit: 80
   lowerLookLimit: 80
+  moveDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &1584303271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837401911351203932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2a89a301d98014fa4914905397b365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowMotionValue: 0.2
