@@ -42,7 +42,6 @@ public class MovimentoDeTiro : MonoBehaviour
             Debug.Log("acertei uma parede");
             player.transform.position = gameObject.transform.GetChild(0).gameObject.transform.position;
             Destroy(gameObject);
-            // o player faz o tp pra esse local
         }
         
     }
