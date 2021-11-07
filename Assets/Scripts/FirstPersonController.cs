@@ -95,7 +95,10 @@ public class FirstPersonController : MonoBehaviour
             moveDirection.y = jumpForce;
 
         if (characterController.velocity.y < -gravity)
-            moveDirection.y = -gravity;
+            if(!characterController.isGrounded)
+                moveDirection.y = -gravity;
+            else
+                moveDirection.y = 0;
 
         characterController.Move(moveDirection * Time.deltaTime);
         HandleHeadBob();
