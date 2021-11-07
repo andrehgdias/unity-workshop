@@ -231,7 +231,7 @@ MonoBehaviour:
   walkSpeed: 4
   sprintSpeed: 8
   jumpForce: 8
-  gravity: 18
+  gravity: 20
   walkBobSpeed: 10
   walkBobAmountH: 0.025
   walkBobAmountV: 0.05
