@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 3
   velocity: 0.1
+  player: {fileID: 0}
 --- !u!135 &2362029072299328848
 SphereCollider:
   m_ObjectHideFlags: 0
