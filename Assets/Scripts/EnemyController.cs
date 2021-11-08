@@ -15,12 +15,15 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        Vector3 step = target.transform.position - transform.position;
-        transform.position += step * velocity;
+        if (other.gameObject.tag == "Player")
+        {
+            Vector3 step = target.transform.position - transform.position;
+            transform.position += step * velocity * Time.deltaTime;
+        }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
