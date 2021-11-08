@@ -4,35 +4,55 @@ using UnityEngine;
 
 public class MovimentoDeTiro : MonoBehaviour
 {
-    public float lifeTime = 3;
-
-    public float velocity = 0.1f;
-
+    [SerializeField] private float lifeTime = 3;
+    [SerializeField] private float velocity = 10f;
+    
+    private GameObject player;
+    private Rigidbody rb;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     // Update is called once per frame
     void Update()
     {
         lifeTime -= Time.deltaTime;
 
         if(lifeTime <= 0)
-        {
             Destroy(gameObject);
-        }
 
-        gameObject.transform.position += gameObject.transform.forward * velocity;
+        rb.AddForce(gameObject.transform.forward * velocity, ForceMode.Force);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
-        if (this.gameObject.name == "RocketEmpty" && collision.gameObject.tag == "Player")
+        Debug.Log("Collison");
+        Debug.Log(collision.gameObject.name);
+
+        if (gameObject.name == "RocketEmpty(Clone)" && collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }    
-        if (this.gameObject.name == "TeletransporteBullet" && collision.gameObject.tag == "Parede")
-        {
-            // o player faz o tp pra esse local
+            Destroy(gameObject);
         }
-        
+        else if (gameObject.name == "TeletransporteBullet(Clone)" && collision.gameObject.CompareTag("Parede"))
+        {
+            GameObject teleportPoint = gameObject.transform.GetChild(0).gameObject;
+            Vector3 movement = teleportPoint.transform.position - player.transform.position;
+
+            player.layer = LayerMask.NameToLayer("NoColision");
+            player.GetComponent<FirstPersonController>().moveDirection.y = 0;
+            player.GetComponent<CharacterController>().Move(movement);
+            player.layer = LayerMask.NameToLayer("Default");
+
+            Destroy(gameObject);
+        }
+        else if (gameObject.name == "TeletransporteBullet(Clone)" && collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+        else
+            Destroy(gameObject);
     }
 }
