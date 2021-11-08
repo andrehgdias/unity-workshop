@@ -33,7 +33,7 @@ public class MovimentoDeTiro : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-        } 
+        }
         else if (gameObject.name == "TeletransporteBullet(Clone)" && collision.gameObject.CompareTag("Parede"))
         {
             GameObject teleportPoint = gameObject.transform.GetChild(0).gameObject;
@@ -44,6 +44,11 @@ public class MovimentoDeTiro : MonoBehaviour
             player.GetComponent<CharacterController>().Move(movement);
             player.layer = LayerMask.NameToLayer("Default");
 
+            Destroy(gameObject);
+        }
+        else if (gameObject.name == "TeletransporteBullet(Clone)" && collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
         else
