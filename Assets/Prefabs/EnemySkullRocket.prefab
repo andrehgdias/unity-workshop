@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469945689392397121}
   - component: {fileID: 4469945689392397120}
-  - component: {fileID: 2025801076511652382}
+  - component: {fileID: 1703741496}
   m_Layer: 0
   m_Name: EnemySkullRocket
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0173d4a2b5a0514e9130c87aa0e7301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &2025801076511652382
+--- !u!135 &1703741496
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,8 +57,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 521.54144
-  m_Center: {x: -209.67168, y: 0, z: -0.00044123837}
+  m_Radius: 150
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4469945688624069056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Lan\xE7a M\xEDssil"
       objectReference: {fileID: 0}
+    - target: {fileID: 2277962414410164164, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -260,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 3595942115235658680, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942309516041892087, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a1d2902e0e37742abf937174fe80ba, type: 3}

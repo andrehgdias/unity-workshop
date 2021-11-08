@@ -6,8 +6,8 @@ public class MovimentoDeTiro : MonoBehaviour
 {
     [SerializeField] private float lifeTime = 3;
     [SerializeField] private float velocity = 10f;
-    [SerializeField] private GameObject player;
     
+    private GameObject player;
     private Rigidbody rb;
     private void Awake()
     {
@@ -20,15 +20,16 @@ public class MovimentoDeTiro : MonoBehaviour
         lifeTime -= Time.deltaTime;
 
         if(lifeTime <= 0)
-        {
             Destroy(gameObject);
-        }
 
         rb.AddForce(gameObject.transform.forward * velocity, ForceMode.Force);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collison");
+        Debug.Log(collision.gameObject.name);
+
         if (gameObject.name == "RocketEmpty(Clone)" && collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
